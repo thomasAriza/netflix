@@ -8,11 +8,41 @@
     
 }
 
-.movie_infos>h2{
+.original{
     color: white;
     padding-top: 20px;
     font-size: 80px;
     margin-bottom: 30px;
+    text-shadow: -2px 0 red;
+    position: relative;
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate{
+  0%{
+    text-shadow: -5px 0 red;
+  }
+  25%{
+    text-shadow: 5px 0 red;
+  }
+  50%{
+    text-shadow: -5px 0 red;
+  }
+  75%{
+    text-shadow: 5px 0 red;
+  }
+  100%{
+    text-shadow: -5px 0 red
+  }
+}
+
+.bis{
+    position: absolute;
+    padding-top: 20px;
+    font-size: 80px;
+    top: 0;
+    left: 0;
+    overflow: hidden;
 }
 
 .movie_infos{
@@ -24,7 +54,7 @@
     
 }
 
-.movie_infos>h{
+.Typewriter{
     margin-top: 20px;
 }
 

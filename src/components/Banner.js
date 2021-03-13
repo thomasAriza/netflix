@@ -7,6 +7,7 @@ import requests from "../API/Request"
 import MenuIcon from '@material-ui/icons/Menu';
 import {IconButton } from '@material-ui/core';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import Typewriter from "typewriter-effect"
 
 const Banner = () => {
 
@@ -22,7 +23,6 @@ const Banner = () => {
         fetchdata()
     }, [])
 
-    console.log(movie)
 
     const onMouseEnter = (e) => {
         e.target.style.backgroundColor="white"
@@ -32,6 +32,13 @@ const Banner = () => {
     const onMouseLeave = (e) => {
         e.target.style.backgroundColor="gray"
         e.target.style.color="white"
+    }
+
+    const write = (typewriter) => {
+        typewriter
+        .pasteString(movie.overview.slice(0,120))
+        .typeString(movie.overview.slice(120,movie.overview.length-1))
+        .start()
     }
 
     return (
@@ -46,14 +53,17 @@ const Banner = () => {
             </div>
             {/* <img alt="" src={"https://image.tmdb.org/t/p/original"+movie.backdrop_path}/> */}
             <div className="movie_infos">
-                <h2>{movie.original_name}</h2>
-
+                <h2 className="original">{movie.original_name}</h2>
+                {/* <h2 className="bis">{movie.original_name}</h2> */}
                 <div className="button">
                     <button onMouseEnter={(e)=>onMouseEnter(e)} onMouseLeave={(e)=>onMouseLeave(e)}><PlayArrowIcon/>Lecture</button>
                     <button onMouseEnter={(e)=>onMouseEnter(e)} onMouseLeave={(e)=>onMouseLeave(e)}><AddIcon/>Ma liste</button>
                 </div>
-                
-                <h>{movie.overview}</h>
+
+                {movie.overview?
+                    (<Typewriter
+                    onInit={(typewriter)=>write(typewriter)}
+                />):null}
                 
             </div>
             <div className="fadeBottom"/>

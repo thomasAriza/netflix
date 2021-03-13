@@ -27,8 +27,6 @@ const Rows = ({title,movieType}) => {
         fetchdata()
     }, [])
 
-    console.log(movies)
-
     return (
         <div className="rows">
             <h>{title}</h>
