@@ -23,17 +23,6 @@ const Banner = () => {
         fetchdata()
     }, [])
 
-
-    const onMouseEnter = (e) => {
-        e.target.style.backgroundColor="white"
-        e.target.style.color="black"
-    }
-
-    const onMouseLeave = (e) => {
-        e.target.style.backgroundColor="gray"
-        e.target.style.color="white"
-    }
-
     const write = (typewriter) => {
         typewriter
         .pasteString(movie.overview.slice(0,120))
@@ -56,8 +45,8 @@ const Banner = () => {
                 <h2 className="original">{movie.original_name}</h2>
                 {/* <h2 className="bis">{movie.original_name}</h2> */}
                 <div className="button">
-                    <button onMouseEnter={(e)=>onMouseEnter(e)} onMouseLeave={(e)=>onMouseLeave(e)}><PlayArrowIcon/>Lecture</button>
-                    <button onMouseEnter={(e)=>onMouseEnter(e)} onMouseLeave={(e)=>onMouseLeave(e)}><AddIcon/>Ma liste</button>
+                    <button><PlayArrowIcon/>Lecture</button>
+                    <button><AddIcon/>Ma liste</button>
                 </div>
 
                 {movie.overview?
