@@ -42,7 +42,7 @@ const Banner = () => {
             </div>
             {/* <img alt="" src={"https://image.tmdb.org/t/p/original"+movie.backdrop_path}/> */}
             <div className="movie_infos">
-                <h2 className="original">{movie.original_name}</h2>
+                <h2 className="original">{movie?.original_name}</h2>
                 {/* <h2 className="bis">{movie.original_name}</h2> */}
                 <div className="button">
                     <button><PlayArrowIcon/>Lecture</button>

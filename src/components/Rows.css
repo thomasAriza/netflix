@@ -20,9 +20,10 @@
     margin-right: 10px;
 }
 
-/* .posters>img:hover{
-    transform: scale(1.08);
-} */
+.posters>img:hover{
+    transition: 0.2s linear;
+    transform: scale(1.05);
+}
 
 .posters{
     display: flex;
